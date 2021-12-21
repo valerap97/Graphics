@@ -45,7 +45,7 @@ void renderScene(void)
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_COLOR_MATERIAL);
-	GLfloat position[] = { 0, 38, 0, 1 };
+	GLfloat position[] = { -80.f, 80.0f, 120.0f, 1.0f };
 	glLightfv(GL_LIGHT0, GL_POSITION, position);
 
 	glEnable(GL_TEXTURE_2D);
