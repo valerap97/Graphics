@@ -191,45 +191,57 @@ void createTree(GLfloat treeX, GLfloat treeY, GLfloat treeZ, GLfloat height) {
    glTranslatef(treeX, -treeY - height, treeZ);
    glDisable(GL_TEXTURE_2D);
 }
-
 void createBird(GLfloat birdX, GLfloat birdY, GLfloat birdZ, double dist) {
   // Башка
-  //glColor3f(1.0, 0.0, 0.0);
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureBody);
   glTranslatef(birdX + dist, birdY, birdZ);
   glutSolidSphere(5, 100, 20);
+  glDisable(GL_TEXTURE_2D);
   //glColor3f(1.0, 1.0, 0.0);
 
   // Клюв
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureBeak);
   glBegin(GL_TRIANGLES);
-  
-  glVertex3f(0.25f, 0, 0.5f);
-  glVertex3f(0.25f, 0, -0.5f);
-  glVertex3f(1.5f, 0, 0);
-
+  glVertex3f(2.5f, 0.0f, 5.0f);
+  glVertex3f(2.5f, 0.0f, -5.0f);
+  glVertex3f(15.0f, 0, 0);
   glEnd();
+  glDisable(GL_TEXTURE_2D);
 
   // Глаза
-  //glColor3f(1.0, 1.0, 1.0);
-  glTranslatef(0.25f, 0.25f, 0.25f);
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureEyeballs);
+  glTranslatef(2.5f, 2.5f, 2.5f);
   glutSolidSphere(2.5, 100, 20);
+  glDisable(GL_TEXTURE_2D);
 
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureDots);
   //glColor3f(0, 0, 0);
-  glTranslatef(0.2f, 0, 0.2f);
-  glutSolidSphere(1, 40, 20);
-  glTranslatef(-0.2f, 0, -0.2f);
+  glTranslatef(2.0f, 0, 2.0f);
+  glutSolidSphere(0.5, 40, 20);
+  glTranslatef(-2.0f, 2.0, -2.0f);
+  glTranslatef(-2.5f, -2.5f, -2.5f);
+  glDisable(GL_TEXTURE_2D);
   
-  glTranslatef(-0.25f, -0.25f, -0.25f);
-
+  
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureEyeballs);
   //glColor3f(1, 1, 1);
-  glTranslatef(0.25f, 0.25f, -0.25f);
+  glTranslatef(2.5f, 2.5f, -2.5f);
   glutSolidSphere(2.5, 100, 20);
+  glDisable(GL_TEXTURE_2D);
   
-  //glColor3f(0, 0, 0);
-  glTranslatef(0.2f, 0, -0.2f);
-  glutSolidSphere(1, 40, 20);
-  glTranslatef(-0.2f, 0, 0.2f);
-  glTranslatef(-0.25f, -0.25f, 0.25f);
+  glEnable(GL_TEXTURE_2D);
+  glBindTexture(GL_TEXTURE_2D, textureDots);
+   //glColor3f(0, 0, 0);
+  glTranslatef(2.0f, 0, -2.0f);
+  glutSolidSphere(0.5, 40, 20);
+  glTranslatef(-2.0f, 0, 2.0f);
+  glTranslatef(-2.5f, -2.5f, 2.5f);
+  glDisable(GL_TEXTURE_2D);
   
   glTranslatef(-birdX - dist, -birdY, -birdZ);
 }
-
